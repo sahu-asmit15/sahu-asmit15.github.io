@@ -8,7 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Typed.js for typing animation -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -17,6 +20,7 @@
             overflow-x: hidden;
         }
 
+        /* Animated gradient for the background */
         .animated-gradient-background {
             background: linear-gradient(-45deg, #0c1222, #111827, #1F2937, #111827);
             background-size: 400% 400%;
@@ -29,6 +33,16 @@
             100% { background-position: 0% 50%; }
         }
 
+        /* Gradient effect for text */
+        .text-gradient {
+            background: linear-gradient(45deg, #38BDF8, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        /* Glassmorphism card effect */
         .glass-card {
             background: rgba(31, 41, 55, 0.4);
             backdrop-filter: blur(12px);
@@ -36,6 +50,7 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
+        /* Styling for skill badges */
         .skill-badge {
             background-color: #1F2937;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -47,6 +62,7 @@
             box-shadow: 0 4px 10px rgba(56, 189, 248, 0.2);
         }
         
+        /* Hover effects for project cards */
         .project-card {
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
@@ -56,7 +72,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Scroll Reveal Animations */
+        /* Scroll reveal animations */
         [data-scroll-reveal] {
             opacity: 0;
             transform: translateY(30px);
@@ -68,7 +84,7 @@
             transform: translateY(0);
         }
         
-        /* Back to top button */
+        /* Back to top button visibility */
         #back-to-top-btn {
             position: fixed;
             bottom: 20px;
@@ -86,9 +102,12 @@
 </head>
 <body class="antialiased animated-gradient-background">
 
+    <!-- ======================================================= -->
+    <!-- HEADER & NAVIGATION                                       -->
+    <!-- ======================================================= -->
     <header class="site-header fixed top-0 left-0 right-0 z-50 glass-card">
-        <div class="main-container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="site-logo text-2xl font-bold tracking-tight">Asmit</a>
+        <div class="px-6 sm:px-12 lg:px-24 py-4 flex justify-between items-center">
+            <a href="#" class="site-logo text-2xl font-bold tracking-tight text-gradient">Asmit</a>
             <nav class="main-nav hidden md:flex space-x-8">
                 <a href="#about" class="nav-link hover:text-sky-400 transition-colors">About</a>
                 <a href="#skills" class="nav-link hover:text-sky-400 transition-colors">Skills</a>
@@ -99,6 +118,7 @@
                 <i data-lucide="menu"></i>
             </button>
         </div>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="mobile-nav-link block py-2 hover:text-sky-400">About</a>
             <a href="#skills" class="mobile-nav-link block py-2 hover:text-sky-400">Skills</a>
@@ -107,14 +127,18 @@
         </div>
     </header>
 
-    <main class="main-container mx-auto px-6 pt-24 md:pt-32">
+    <!-- ======================================================= -->
+    <!-- MAIN CONTENT                                              -->
+    <!-- ======================================================= -->
+    <main class="px-6 sm:px-12 lg:px-24 pt-24 md:pt-32">
 
+        <!-- HERO SECTION -->
         <section id="home" class="hero-section min-h-[80vh] flex items-center">
-            <div class="hero-content max-w-3xl" data-scroll-reveal>
+            <div class="hero-content max-w-4xl" data-scroll-reveal>
                 <h2 class="text-lg font-medium text-sky-400">Hello, I'm</h2>
-                <h1 class="text-5xl md:text-7xl font-bold mt-2 tracking-tighter">Asmit Kumar Sudhanshu</h1>
-                <h3 class="text-3xl md:text-4xl font-semibold mt-4 text-gray-300">BCA Student & Aspiring Cloud/DevOps Engineer</h3>
-                <p class="mt-6 text-lg text-gray-400 max-w-2xl">
+                <h1 class="text-5xl md:text-7xl font-bold mt-2 tracking-tighter text-gradient">Asmit Kumar Sudhanshu</h1>
+                <h3 class="text-3xl md:text-4xl font-semibold mt-4 text-gray-300"><span id="typed-text"></span></h3>
+                <p class="mt-6 text-lg text-gray-400 max-w-3xl">
                     A motivated and enthusiastic 3rd-year BCA student with a strong foundation in cloud computing, DevOps tools, and programming. Seeking an internship to apply and expand my technical skills in a professional environment.
                 </p>
                 <div class="mt-8 flex gap-4 flex-wrap">
@@ -123,17 +147,22 @@
                         Get in Touch
                     </a>
                     <a href="https://linkedin.com/in/AsmitSudhanshu" target="_blank" class="cta-button border border-gray-600 hover:bg-gray-700 text-gray-200 font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 inline-flex items-center gap-2">
-                         <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
                         LinkedIn
+                    </a>
+                    <a href="https://github.com/sahu-asmit15" target="_blank" class="cta-button border border-gray-600 hover:bg-gray-700 text-gray-200 font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 inline-flex items-center gap-2">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        GitHub
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- ABOUT SECTION -->
         <section id="about" class="about-section py-20">
-            <div data-scroll-reveal>
+            <div data-scroll-reveal class="max-w-7xl mx-auto">
                 <h2 class="section-title text-4xl font-bold mb-8 text-center">About Me</h2>
-                <div class="about-card glass-card rounded-xl p-8 md:p-12 max-w-4xl mx-auto">
+                <div class="about-card glass-card rounded-xl p-8 md:p-12">
                     <p class="text-lg text-gray-300 mb-4">
                         I am a dedicated Bachelor of Computer Applications student at Kristu Jayanti University, Bengaluru, with a projected graduation in June 2026. My passion lies at the intersection of software development and operations, and I am actively honing my skills in cloud-native technologies and automation.
                     </p>
@@ -152,22 +181,25 @@
             </div>
         </section>
 
+        <!-- SKILLS SECTION -->
         <section id="skills" class="skills-section py-20">
-            <div data-scroll-reveal>
+            <div data-scroll-reveal class="max-w-7xl mx-auto">
                 <h2 class="section-title text-4xl font-bold mb-12 text-center">Technical Skills</h2>
                 <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- DevOps & Automation -->
                     <div class="skill-category-card glass-card rounded-xl p-6">
                         <h3 class="text-2xl font-semibold mb-4 text-sky-400">DevOps & Automation</h3>
                         <div class="flex flex-wrap gap-3">
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Git</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Maven</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Jenkins</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Terraform</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Ansible</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Docker</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Kubernetes</span>
+                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium inline-flex items-center gap-2">Git</span>
+                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium inline-flex items-center gap-2">Maven</span>
+                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium inline-flex items-center gap-2">Jenkins</span>
+                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium inline-flex items-center gap-2">Terraform</span>
+                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium inline-flex items-center gap-2">Ansible</span>
+                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium inline-flex items-center gap-2">Docker</span>
+                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium inline-flex items-center gap-2">Kubernetes</span>
                         </div>
                     </div>
+                    <!-- Virtualization & Cloud -->
                     <div class="skill-category-card glass-card rounded-xl p-6">
                         <h3 class="text-2xl font-semibold mb-4 text-sky-400">Virtualization & Cloud</h3>
                         <div class="flex flex-wrap gap-3">
@@ -176,6 +208,7 @@
                             <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Vagrant</span>
                         </div>
                     </div>
+                    <!-- Programming Languages -->
                     <div class="skill-category-card glass-card rounded-xl p-6">
                         <h3 class="text-2xl font-semibold mb-4 text-sky-400">Programming & Web</h3>
                         <div class="flex flex-wrap gap-3">
@@ -187,60 +220,77 @@
                             <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Bash Scripting</span>
                         </div>
                     </div>
-                    <div class="skill-category-card glass-card rounded-xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-sky-400">OS & Database</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Linux (Ubuntu, CentOS)</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">MySQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category-card glass-card rounded-xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-sky-400">Scripting & Markup</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">JSON</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">YAML</span>
-                        </div>
-                    </div>
-                     <div class="skill-category-card glass-card rounded-xl p-6">
-                        <h3 class="text-2xl font-semibold mb-4 text-sky-400">Core Competencies</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Problem-Solving</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Debugging</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Quick Learner</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Agile Methodology</span>
-                            <span class="skill-badge py-2 px-4 rounded-full text-sm font-medium">Team Collaboration</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- PROJECTS SECTION -->
         <section id="projects" class="projects-section py-20">
-             <div data-scroll-reveal>
+             <div data-scroll-reveal class="max-w-7xl mx-auto">
                 <h2 class="section-title text-4xl font-bold mb-12 text-center">Projects</h2>
                 <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="project-card glass-card rounded-xl p-6 flex flex-col">
-                        <h3 class="text-xl font-semibold mb-2 text-sky-400">VPN Server Setup on AWS</h3>
-                        <p class="text-gray-400 flex-grow">
-                            Configured and deployed a secure VPN server using OpenVPN on an AWS EC2 instance, enabling secure remote access to a private network.
-                        </p>
+                    <!-- Project 1 -->
+                    <div class="project-card glass-card rounded-xl p-6 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2 text-sky-400">VPN Server Setup on AWS</h3>
+                            <p class="text-gray-400 mb-4">
+                                Configured and deployed a secure VPN server using OpenVPN on an AWS EC2 instance, enabling secure remote access to a private network.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold bg-gray-700 text-sky-300 py-1 px-3 rounded-full">AWS EC2</span>
+                                <span class="text-xs font-semibold bg-gray-700 text-sky-300 py-1 px-3 rounded-full">OpenVPN</span>
+                                <span class="text-xs font-semibold bg-gray-700 text-sky-300 py-1 px-3 rounded-full">Linux</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-400">
+                                <a href="https://github.com/sahu-asmit15" target="_blank" class="hover:text-sky-400 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                                <a href="#" class="hover:text-sky-400 transition-colors"><i data-lucide="arrow-up-right-square" class="w-6 h-6"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-card glass-card rounded-xl p-6 flex flex-col">
-                        <h3 class="text-xl font-semibold mb-2 text-sky-400">Automated Linux Server Setup</h3>
-                        <p class="text-gray-400 flex-grow">
-                            Utilized Vagrant for virtual machine provisioning and Ansible for configuration management to automate the setup of a standardized Linux server environment.
-                        </p>
+                    <!-- Project 2 -->
+                    <div class="project-card glass-card rounded-xl p-6 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2 text-sky-400">Automated Linux Server Setup</h3>
+                            <p class="text-gray-400 mb-4">
+                                Utilized Vagrant for provisioning and Ansible for configuration management to automate the setup of a standardized Linux server.
+                            </p>
+                        </div>
+                         <div class="mt-auto">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold bg-gray-700 text-sky-300 py-1 px-3 rounded-full">Vagrant</span>
+                                <span class="text-xs font-semibold bg-gray-700 text-sky-300 py-1 px-3 rounded-full">Ansible</span>
+                                <span class="text-xs font-semibold bg-gray-700 text-sky-300 py-1 px-3 rounded-full">YAML</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-400">
+                                <a href="https://github.com/sahu-asmit15" target="_blank" class="hover:text-sky-400 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-card glass-card rounded-xl p-6 flex flex-col">
-                        <h3 class="text-xl font-semibold mb-2 text-sky-400">Web App Deployment with Containers</h3>
-                        <p class="text-gray-400 flex-grow">
-                            Containerized a simple web application using Docker and orchestrated its deployment, scaling, and management using Kubernetes.
-                        </p>
+                    <!-- Project 3 -->
+                    <div class="project-card glass-card rounded-xl p-6 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2 text-sky-400">Web App Deployment with Containers</h3>
+                            <p class="text-gray-400 mb-4">
+                                Containerized a web application using Docker and orchestrated its deployment, scaling, and management using Kubernetes.
+                            </p>
+                        </div>
+                         <div class="mt-auto">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold bg-gray-700 text-sky-300 py-1 px-3 rounded-full">Docker</span>
+                                <span class="text-xs font-semibold bg-gray-700 text-sky-300 py-1 px-3 rounded-full">Kubernetes</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-400">
+                                <a href="https://github.com/sahu-asmit15" target="_blank" class="hover:text-sky-400 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT SECTION -->
         <section id="contact" class="contact-section py-20 text-center">
             <div data-scroll-reveal>
                 <h2 class="section-title text-4xl font-bold mb-4">Get In Touch</h2>
@@ -266,21 +316,28 @@
 
     </main>
 
+    <!-- ======================================================= -->
+    <!-- FOOTER                                                    -->
+    <!-- ======================================================= -->
     <footer class="site-footer border-t border-gray-800">
-        <div class="main-container mx-auto px-6 py-6 text-center text-gray-500">
+        <div class="px-6 sm:px-12 lg:px-24 py-6 text-center text-gray-500">
             <p>&copy; 2024 Asmit Kumar Sudhanshu. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
     <a href="#home" id="back-to-top-btn" class="bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full shadow-lg">
         <i data-lucide="arrow-up"></i>
     </a>
 
+    <!-- ======================================================= -->
+    <!-- JAVASCRIPT                                                -->
+    <!-- ======================================================= -->
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // Mobile menu toggle functionality
+        // --- Mobile Menu Toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
@@ -295,20 +352,43 @@
             });
         });
 
-        // Scroll reveal animation logic
+        // --- Typed.js Animation for Hero Subtitle ---
+        new Typed('#typed-text', {
+            strings: ["BCA Student", "Aspiring Cloud Engineer", "Future DevOps Specialist"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            backDelay: 2000,
+            loop: true,
+            smartBackspace: true,
+        });
+
+        // --- Highlight Active Navigation Link on Scroll ---
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a.nav-link');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-sky-400', 'font-semibold');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('text-sky-400', 'font-semibold');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 }); // Highlight when 50% of the section is visible
+        sections.forEach(section => observer.observe(section));
+
+
+        // --- Scroll Reveal Animation ---
         const scrollElements = document.querySelectorAll("[data-scroll-reveal]");
-        
         const isElementInView = (el, dividend = 1) => {
             const elementTop = el.getBoundingClientRect().top;
-            return (
-                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-            );
+            return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
         };
-        
         const displayScrollElement = (element) => {
             element.setAttribute("data-scroll-reveal", "in");
         };
-        
         const handleScrollAnimation = () => {
             scrollElements.forEach((el) => {
                 if (isElementInView(el, 1.25)) {
@@ -316,13 +396,11 @@
                 }
             });
         };
-        
         window.addEventListener("scroll", handleScrollAnimation);
-        // Trigger animation for elements already in view on page load
+        // Trigger for elements already in view on page load
         handleScrollAnimation();
 
-
-        // Back to top button visibility logic
+        // --- Back to Top Button Visibility ---
         const toTopButton = document.getElementById('back-to-top-btn');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
@@ -331,7 +409,6 @@
                 toTopButton.classList.remove('active');
             }
         });
-
     </script>
 </body>
 </html>
